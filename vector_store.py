@@ -9,7 +9,7 @@ class VectorStore:
     """Create a vector store using ChromaDB"""
     def __init__(self,
                  collection_name:str="awsdoc_vectordb"
-                 ,persist_directory:str="/Users/vaibha/Documents/main_projects/Doc_Rag_Vector_Search/data/vectordb"):
+                 ,persist_directory:str="../data/vectordb"):
         self.collection_name=collection_name
         self.persist_directory=persist_directory
         self.client=None
@@ -71,7 +71,7 @@ class VectorStore:
 
 def intialize_Vdb():
     """Initialise the vector database"""
-    docs=doc_load.load_docs('/Users/vaibha/Documents/main_projects/Doc_Rag_Vector_Search/data')
+    docs=doc_load.load_docs('../data/documents')
     chunks=doc_load.chunk(docs)
     texts=[chunks[i].page_content for i in range(len(chunks))]
     emb=embedding.Embedding()
