@@ -6,7 +6,13 @@ A Retrieval-Augmented Generation (RAG) project built using Flask, ChromaDB, Sent
 This application allows users to ask questions related to AWS documents / whitepapers and generates answers using semantic search + LLM response generation.
 
 ---
+## Project Summary
 
+AWS Document RAG Search is an AI-powered question-answering system that uses Retrieval-Augmented Generation (RAG) to answer questions from AWS PDF documents and whitepapers.
+
+The system converts documents into embeddings, stores them in a vector database, retrieves relevant content using similarity search, and uses an LLM to generate accurate responses.
+
+---
 ## Tech Stack
 
 - Python
@@ -49,24 +55,32 @@ Answer
 ## Folder Structure
 ```
 project/
-│── app.py
-│── doc_load.py -> load and chunck the documents
-│── embedding.py -> convert the chunks to vector
-│── vector_store.py -> store in vector database
-│── retrieval.py -> similarity search to retrieve
-│── generate_result.py ->llm to generate the ouput
-│── .env  ->api key for th llm model
-│── requirements.txt
-│── data 
-
+│── app.py 
+│── doc_load.py  #load and chunk the pdfs
+│── embedding.py  #convert chunks to vector
+│── vector_store.py  # store the vector in database
+│── retrieval.py  #fetch the similar content
+│── generate_result.py #generate the result 
+│── .env #store the api key
+│── requirements.txt 
+│── data/
+│   └── documents/  # sourse PDFs
+│   └── vectordb/      # Created locally after initialization
 ```
+## Vector Database Setup
+
+The `data/vectordb/` folder is created locally when you run the initialization step.
+
+It stores ChromaDB vector embeddings generated from the PDF documents and is excluded from GitHub.
+
 ## Create .env 
 Store your api key:
 ```
 OPENAI_API_KEY=your_key_here
 ```
+
 ## Run Vector DB Initialization
-uncomment  and run the flask app 
+Uncomment  and Run the flask app 
 ```
 store_vector=intialiseVdb()
 ```
@@ -75,11 +89,12 @@ In Bash
 ```
 flask run
 ```
-visit:
+Visit:
 ```
 http://127.0.0.1:5000/
 ```
 ---
+
 ## Example
 Query
 ```
@@ -103,9 +118,5 @@ Result
 ---
 
 
-## Project Summary
 
-AWS Document RAG Search is an AI-powered question-answering system that uses Retrieval-Augmented Generation (RAG) to answer questions from AWS PDF documents and whitepapers.
-
-The system converts documents into embeddings, stores them in a vector database, retrieves relevant content using similarity search, and uses an LLM to generate accurate responses.
 
