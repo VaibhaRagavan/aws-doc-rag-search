@@ -1,0 +1,15 @@
+flask
+dotenv
+python==3.10
+numpy==1.26.4
+chromadb==1.5.7 
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-core==0.2.38
+langchain-text-splitters==0.2.4
+langchain-openai
+scikit-learn==1.4.2
+PyMuPDF==1.24.9
+torch==2.2.2
+transformers==4.41.2
+sentence-transformers==2.7.0
